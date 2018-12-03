@@ -12,7 +12,7 @@ def tasks_list():
     resp = requests.get('https://api-to-do.herokuapp.com/tasks')    
     jsonresp=resp.json()
     for element in jsonresp["tasks"]:
-        tasks.append('<Content %s>' % element["Content"])      
+        tasks.append(element["Content"])      
     return render_template('list.html', tasks=tasks)
 
 
