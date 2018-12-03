@@ -7,8 +7,7 @@ class Task(Resource):
 
 
     def post(self):        
-        content=request.get_json()
-        print content["task"]
+        content=request.get_json()       
         task = TaskModel(content["task"])
         try:
             task.save_to_db()

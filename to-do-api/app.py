@@ -10,10 +10,6 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 
 api.add_resource(Task, '/task')
 api.add_resource(TaskList, '/tasks')
